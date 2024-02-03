@@ -1,2 +1,2 @@
-# JAVA-RestfulAPI-and-Microservices
+# UDEMY-Backend-JAVA
 Repository created to register my learning progress.
