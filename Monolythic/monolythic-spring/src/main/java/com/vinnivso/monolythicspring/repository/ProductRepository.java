@@ -1,12 +1,12 @@
 package com.vinnivso.monolythicspring.repository;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 import com.vinnivso.monolythicspring.model.Product;
+import com.vinnivso.monolythicspring.model.exception.ResourceNotFoundException;
 
 @Repository
 public class ProductRepository {
@@ -71,7 +71,7 @@ public class ProductRepository {
     // Look for the the Product.
     Optional<Product> productFound = getProductById(product.getId());
     if (productFound.isEmpty()) {
-      throw new InputMismatchException("Product not found.");
+      throw new ResourceNotFoundException("Product not found.");
     }
 
     // Remove the oldest Product.
