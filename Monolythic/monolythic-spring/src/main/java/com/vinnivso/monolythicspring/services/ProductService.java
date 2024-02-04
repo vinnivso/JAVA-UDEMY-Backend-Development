@@ -56,6 +56,7 @@ public class ProductService {
    * Method to update a product by Id.
    *
    * @param product Product updated.
+   * @param id Id from product to be updated.
    * @return Product updated maintaining the same Id.
    */
   public Product updateProduct(Integer id, Product product) {
