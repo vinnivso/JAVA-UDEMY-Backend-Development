@@ -17,11 +17,11 @@ public class ProductRepository {
   // Posso utilizar o LIST, ele consegue trabalhar com qualquer tipo de List,
   // ArrayList, dentre outros.
   /**
-   * Method to return all products
+   * Method to return all products.
    *
    * @return Get a list of all products.
    */
-  public List<Product> getAll() {
+  public List<Product> getAllProducts() {
     return products;
   }
 
@@ -31,7 +31,7 @@ public class ProductRepository {
    * @param id ID from product to be get.
    * @return Get Product By Id.
    */
-  public Optional<Product> getById(Integer id) {
+  public Optional<Product> getProductById(Integer id) {
     return products
         .stream()
         .filter(element -> element.getId() == id)
@@ -56,24 +56,25 @@ public class ProductRepository {
    *
    * @param id Id from product to be deleted.
    */
-  public void deleteById(Integer id) {
+  public void deleteProductById(Integer id) {
     products.removeIf(element -> element.getId() == id);
   }
 
   /**
    * Method to update a product by Id.
+   *
    * @param product Product updated.
    * @return Product updated maintaining the same Id.
    */
   public Product updateProduct(Product product) {
     // Look for the the Product.
-    Optional<Product> productFound = getById(product.getId());
+    Optional<Product> productFound = getProductById(product.getId());
     if (productFound.isEmpty()) {
       throw new InputMismatchException("Product not found.");
     }
 
     // Remove the oldest Product.
-    deleteById(product.getId());
+    deleteProductById(product.getId());
 
     // Adding the new Product updated.
     products.add(product);
