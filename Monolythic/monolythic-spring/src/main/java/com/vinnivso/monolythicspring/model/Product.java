@@ -1,7 +1,15 @@
 package com.vinnivso.monolythicspring.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity // Transform this class into an Entity, so this will be an table in DB.
 public class Product {
   // #region Attributes
+  @Id // Transform this attribute into primary key.
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
   private String name;
