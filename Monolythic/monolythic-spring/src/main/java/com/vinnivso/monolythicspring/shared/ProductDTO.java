@@ -1,15 +1,7 @@
-package com.vinnivso.monolythicspring.model;
+package com.vinnivso.monolythicspring.shared;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity // Transform this class into an Entity, so this will be an table in DB.
-public class Product {
-  // #region Attributes
-  @Id // Transform this attribute into primary key.
-  @GeneratedValue(strategy = GenerationType.AUTO)
+public class ProductDTO {
+    // #region Attributes
   private Integer id;
 
   private String name;

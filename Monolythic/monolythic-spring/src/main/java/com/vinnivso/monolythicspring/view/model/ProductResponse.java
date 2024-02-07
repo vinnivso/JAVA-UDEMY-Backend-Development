@@ -1,15 +1,7 @@
-package com.vinnivso.monolythicspring.model;
+package com.vinnivso.monolythicspring.view.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity // Transform this class into an Entity, so this will be an table in DB.
-public class Product {
+public class ProductResponse {
   // #region Attributes
-  @Id // Transform this attribute into primary key.
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
   private String name;
@@ -62,4 +54,5 @@ public class Product {
     this.observation = observation;
   }
   // #endregion Getters and Setters
+
 }
